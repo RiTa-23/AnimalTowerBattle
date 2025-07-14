@@ -518,6 +518,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ebf9b64f861543fd877dcff2973cb44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  characters:
+  - {fileID: 8827369534403297954, guid: 753a04f0f31484b4ba918374701ad5ce, type: 3}
+  - {fileID: 1164117308341469061, guid: 053a48434b4894ec5839829301e4d34f, type: 3}
+  - {fileID: 1159192295748788516, guid: 782b4699299f741ad86d4712e48c20d3, type: 3}
+  - {fileID: 4245569157034185075, guid: 8536fe15df3064e77aeab6bf0c877d60, type: 3}
+  - {fileID: 8953608911708404437, guid: c63f4f3770fb44f7f8b3371e98d882db, type: 3}
+  - {fileID: 567431201503887346, guid: 0e3215a8e39a043128efec8e717e3317, type: 3}
+  - {fileID: 6058950451287068263, guid: 8ad0da1a162f54c04834fea21f946b2f, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

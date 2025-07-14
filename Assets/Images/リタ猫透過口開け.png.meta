@@ -84,7 +84,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 1700
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -422,7 +422,19 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      "\u30EA\u30BF\u732B\u900F\u904E\u53E3\u958B\u3051_0": -8560261173125430388
+      "\u30EA\u30BF\u732B\u900F\u904E\u53E3\u958B\u3051_1": 3194229249065371200
+      "\u30EA\u30BF\u732B\u900F\u904E\u53E3\u958B\u3051_10": -3459963079360168597
+      "\u30EA\u30BF\u732B\u900F\u904E\u53E3\u958B\u3051_11": 4149046573742992645
+      "\u30EA\u30BF\u732B\u900F\u904E\u53E3\u958B\u3051_2": -6586387085730184862
+      "\u30EA\u30BF\u732B\u900F\u904E\u53E3\u958B\u3051_3": -6877718748258859786
+      "\u30EA\u30BF\u732B\u900F\u904E\u53E3\u958B\u3051_4": -5025755051481970638
+      "\u30EA\u30BF\u732B\u900F\u904E\u53E3\u958B\u3051_5": -4726000103488436826
+      "\u30EA\u30BF\u732B\u900F\u904E\u53E3\u958B\u3051_6": 2238506117576032748
+      "\u30EA\u30BF\u732B\u900F\u904E\u53E3\u958B\u3051_7": 8156365153305950040
+      "\u30EA\u30BF\u732B\u900F\u904E\u53E3\u958B\u3051_8": 3183035530303688015
+      "\u30EA\u30BF\u732B\u900F\u904E\u53E3\u958B\u3051_9": -2467188637278198920
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
