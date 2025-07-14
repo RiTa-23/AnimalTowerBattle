@@ -58,8 +58,8 @@ public class GameManager : MonoBehaviour
         GameObject[] characterObjects = GameObject.FindGameObjectsWithTag("Character");
         foreach (GameObject character in characterObjects)
         {
-            //キャラクターの速度が0.01以上なら動いていると判断
-            if (character.GetComponent<Rigidbody2D>().linearVelocity.magnitude > 0.01f)
+            //キャラクターの速度が0.001以上なら動いていると判断
+            if (character.GetComponent<Rigidbody2D>().linearVelocity.magnitude > 0.001f)
             {
                 return true; //キャラクターが動いている場合はtrue
             }
