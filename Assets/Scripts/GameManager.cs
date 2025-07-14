@@ -7,8 +7,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] GameObject[] characters;//キャラクターオブジェクト配列
     bool isGene = false;//キャラクターが生成されたかどうか
     GameObject geneChara; //生成されたキャラクター単体
-    bool isButtonHover = false; //ボタンがホバーされているかどうか
     bool isInterval = false; //キャラクター生成の間隔を制御
+    bool isButtonHover = false; //ボタンがホバーされているかどうか
     void Start()
     {
 
@@ -17,21 +17,18 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         //キャラクターが生成されていないかつキャラが静止している場合
-        if (!isGene && !CheckMove()&&!isInterval)
+        if (!isGene && !isInterval && !CheckMove())
         {
             CreateCharacter(); //キャラクターを生成
             isGene = true;
         }
         //マウスの左ボタンが離されたとき、かつキャラクターが生成されている場合
-        else if (Input.GetMouseButtonUp(0) && isGene)
+        else if (Input.GetMouseButtonUp(0) && isGene && !isButtonHover)
         {
-            if (!isButtonHover)
-            {
-                //物理挙動を有効にする
-                geneChara.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
-                isGene = false; //キャラクター生成フラグをリセット
-                StartCoroutine(IntervalCoroutine()); //キャラクター生成の間隔を制御
-            }
+            //物理挙動を有効にする
+            geneChara.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
+            isGene = false; //キャラクター生成フラグをリセット
+            StartCoroutine(IntervalCoroutine()); //キャラクター生成の間隔を制御
         }
         else if (Input.GetMouseButton(0) && isGene && !isButtonHover)
         {
@@ -47,6 +44,12 @@ public class GameManager : MonoBehaviour
         transform.position, Quaternion.identity);
         //物理挙動をさせない状態にする
         geneChara.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Kinematic;
+    }
+    IEnumerator IntervalCoroutine()
+    {
+        isInterval = true; //間隔制御フラグを立てる
+        yield return new WaitForSeconds(1f); //1秒待機
+        isInterval = false; //間隔制御フラグをリセット
     }
 
     bool CheckMove()
@@ -64,12 +67,6 @@ public class GameManager : MonoBehaviour
         return false; //キャラクターが動いていない場合はfalse
     }
 
-    IEnumerator IntervalCoroutine()
-    {
-        isInterval = true; //間隔制御フラグを立てる
-        yield return new WaitForSeconds(1f); //1秒待機
-        isInterval = false; //間隔制御フラグをリセット
-    }
 
     public void RotateCharacter()
     {
