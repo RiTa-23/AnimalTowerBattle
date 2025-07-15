@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
     GameObject geneChara; //生成されたキャラクター単体
     bool isInterval = false; //キャラクター生成の間隔を制御
     bool isButtonHover = false; //ボタンがホバーされているかどうか
+    public static bool isGameOver = false; //ゲームオーバー状態を管理
     void Start()
     {
 
@@ -16,6 +17,10 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
+        //ゲームオーバー状態であれば処理を終了
+        if (isGameOver)
+            return;
+
         //キャラクターが生成されていないかつキャラが静止している場合
         if (!isGene && !isInterval && !CheckMove())
         {
