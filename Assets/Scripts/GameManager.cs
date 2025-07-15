@@ -1,6 +1,5 @@
-using System.Collections;
+using System.Collections;//IEnumeratorを使用するために必要
 using UnityEngine;
-using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -12,7 +11,11 @@ public class GameManager : MonoBehaviour
     public static bool isGameOver = false; //ゲームオーバー状態を管理
     void Start()
     {
-
+        //ゲーム開始時の初期化
+        isGameOver = false; //ゲーム開始時はゲームオーバーではない
+        isGene = false; //キャラクター生成フラグをリセット
+        isInterval = false; //間隔制御フラグをリセット
+        isButtonHover = false; //ボタンのホバー状態をリセット
     }
 
     void Update()
