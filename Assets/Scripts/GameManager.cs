@@ -1,4 +1,5 @@
 using System.Collections;//IEnumeratorを使用するために必要
+using TMPro;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -9,6 +10,9 @@ public class GameManager : MonoBehaviour
     bool isInterval = false; //キャラクター生成の間隔を制御
     bool isButtonHover = false; //ボタンがホバーされているかどうか
     public static bool isGameOver = false; //ゲームオーバー状態を管理
+    int score; //スコアを管理
+    [SerializeField] TextMeshProUGUI scoreText; //スコア表示用のTextMeshProUGUI
+    bool isGameStarted = false; //ゲーム開始状態を管理
     void Start()
     {
         //ゲーム開始時の初期化
@@ -16,6 +20,9 @@ public class GameManager : MonoBehaviour
         isGene = false; //キャラクター生成フラグをリセット
         isInterval = false; //間隔制御フラグをリセット
         isButtonHover = false; //ボタンのホバー状態をリセット
+        score = 0; //スコアを初期化
+        isGameStarted = false; //ゲーム開始状態をリセット
+        scoreText.text = score.ToString(); //スコアテキストを初期化
     }
 
     void Update()
@@ -29,6 +36,12 @@ public class GameManager : MonoBehaviour
         {
             CreateCharacter(); //キャラクターを生成
             isGene = true;
+
+            //ゲーム開始時点はスコアを加算しない
+            if (isGameStarted)
+                UpdateScore();
+            else
+                isGameStarted = true; //ゲーム開始状態を更新
         }
         //マウスの左ボタンが離されたとき、かつキャラクターが生成されている場合
         else if (Input.GetMouseButtonUp(0) && isGene && !isButtonHover)
@@ -75,7 +88,6 @@ public class GameManager : MonoBehaviour
         return false; //キャラクターが動いていない場合はfalse
     }
 
-
     public void RotateCharacter()
     {
         if (isGene)
@@ -85,6 +97,12 @@ public class GameManager : MonoBehaviour
     public void IsButtonChange(bool isX)
     {
         isButtonHover = isX; //ボタンの状態を変更
+    }
+
+    void UpdateScore()
+    {
+        score++; //スコアを加算
+        scoreText.text = score.ToString(); //スコアを表示 
     }
     
 }
