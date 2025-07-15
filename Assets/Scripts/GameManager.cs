@@ -102,7 +102,7 @@ public class GameManager : MonoBehaviour
     void UpdateScore()
     {
         score++; //スコアを加算
-        scoreText.text = score.ToString(); //スコアを表示 
+        scoreText.text = score.ToString(); //スコアテキストを更新
     }
     
 }
