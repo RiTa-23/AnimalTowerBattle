@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3213644355458020243}
   - component: {fileID: 6295842189255301283}
   - component: {fileID: 5830875197334752103}
-  - component: {fileID: 3622052204469879991}
+  - component: {fileID: 6542920026499689024}
   m_Layer: 0
   m_Name: ritaneko_icon
   m_TagString: Character
@@ -116,8 +116,8 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!60 &3622052204469879991
-PolygonCollider2D:
+--- !u!61 &6542920026499689024
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -154,16 +154,11 @@ PolygonCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.8086957, y: 0.7443478}
+    oldSize: {x: 0.62, y: 0.5706667}
     newSize: {x: 18.6, y: 17.12}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: -0.40434784, y: 0.37217394}
-      - {x: -0.40434784, y: -0.37217394}
-      - {x: 0.40434784, y: -0.37217394}
-      - {x: 0.40434784, y: 0.37217394}
-  m_UseDelaunayMesh: 1
+  m_Size: {x: 0.62, y: 0.5706667}
+  m_EdgeRadius: 0
