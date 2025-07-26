@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5265042224618012668}
   - component: {fileID: 8441456454544916360}
   - component: {fileID: 8125154159440588627}
-  - component: {fileID: 9170044231757251963}
+  - component: {fileID: -7718854234506686848}
   m_Layer: 0
   m_Name: usako
   m_TagString: Character
@@ -116,7 +116,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!60 &9170044231757251963
+--- !u!60 &-7718854234506686848
 PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -558,4 +558,4 @@ PolygonCollider2D:
       - {x: -0.2775421, y: -0.5266846}
       - {x: -0.27082947, y: -0.52875}
       - {x: -0.22487366, y: -0.52875}
-  m_UseDelaunayMesh: 0
+  m_UseDelaunayMesh: 1

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4704416297930551144}
   - component: {fileID: 5858984407819984306}
   - component: {fileID: 6838613179831634159}
-  - component: {fileID: 8616843315595803162}
+  - component: {fileID: 2835726212396534696}
   m_Layer: 0
   m_Name: kimoneko
   m_TagString: Character
@@ -116,7 +116,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!60 &8616843315595803162
+--- !u!60 &2835726212396534696
 PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -796,4 +796,4 @@ PolygonCollider2D:
       - {x: -0.26866665, y: 0.23933333}
       - {x: -0.26866665, y: 0.24266666}
       - {x: -0.26933333, y: 0.24333332}
-  m_UseDelaunayMesh: 0
+  m_UseDelaunayMesh: 1

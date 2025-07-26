@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7565155428305694591}
   - component: {fileID: 4961449429043802643}
   - component: {fileID: 823249021335105050}
-  - component: {fileID: 1605709679989026882}
+  - component: {fileID: -1657988534550672164}
   m_Layer: 0
   m_Name: ritaneko0
   m_TagString: Character
@@ -116,7 +116,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!60 &1605709679989026882
+--- !u!60 &-1657988534550672164
 PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -760,4 +760,4 @@ PolygonCollider2D:
       - {x: -0.11899016, y: -0.5613054}
       - {x: -0.10719455, y: -0.55400336}
       - {x: -0.09652234, y: -0.54333115}
-  m_UseDelaunayMesh: 0
+  m_UseDelaunayMesh: 1

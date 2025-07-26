@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6490973665431893812}
   - component: {fileID: 6086002454684264855}
   - component: {fileID: 3740001852550214785}
-  - component: {fileID: 7103926340371888714}
+  - component: {fileID: 393662318307013886}
   m_Layer: 0
   m_Name: tinbana_1
   m_TagString: Character
@@ -116,7 +116,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!60 &7103926340371888714
+--- !u!60 &393662318307013886
 PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -392,4 +392,4 @@ PolygonCollider2D:
       - {x: 0.03730769, y: -0.03153846}
       - {x: 0.03423077, y: -0.033076923}
       - {x: 0.029615385, y: -0.033846155}
-  m_UseDelaunayMesh: 0
+  m_UseDelaunayMesh: 1

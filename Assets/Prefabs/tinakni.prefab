@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5822807606787544886}
   - component: {fileID: 6358639048654622611}
   - component: {fileID: 6030880730259749237}
-  - component: {fileID: 1337701664290893125}
+  - component: {fileID: -8624285801508662337}
   m_Layer: 0
   m_Name: tinakni
   m_TagString: Character
@@ -116,7 +116,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!60 &1337701664290893125
+--- !u!60 &-8624285801508662337
 PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -331,4 +331,4 @@ PolygonCollider2D:
       - {x: 0.448, y: -0.14500001}
       - {x: 0.446, y: -0.147}
       - {x: 0.44400004, y: -0.14500001}
-  m_UseDelaunayMesh: 0
+  m_UseDelaunayMesh: 1
