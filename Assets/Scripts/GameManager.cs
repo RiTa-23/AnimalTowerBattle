@@ -2,6 +2,7 @@ using System.Collections;//IEnumeratorを使用するために必要
 using TMPro;
 using UnityEngine;
 
+[RequireComponent(typeof(AudioSource))] //AudioSourceコンポーネントが必要
 public class GameManager : MonoBehaviour
 {
     [SerializeField] GameObject[] characters;//キャラクターオブジェクト配列
@@ -13,6 +14,10 @@ public class GameManager : MonoBehaviour
     int score; //スコアを管理
     [SerializeField] TextMeshProUGUI scoreText; //スコア表示用のTextMeshProUGUI
     bool isGameStarted = false; //ゲーム開始状態を管理
+    [SerializeField] AudioClip fall_se;
+    [SerializeField] AudioClip rotate_se;
+    AudioSource audioSource;
+    
     void Start()
     {
         //ゲーム開始時の初期化
@@ -23,6 +28,7 @@ public class GameManager : MonoBehaviour
         score = 0; //スコアを初期化
         isGameStarted = false; //ゲーム開始状態をリセット
         scoreText.text = score.ToString(); //スコアテキストを初期化
+        audioSource = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -49,6 +55,7 @@ public class GameManager : MonoBehaviour
             //物理挙動を有効にする
             geneChara.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
             isGene = false; //キャラクター生成フラグをリセット
+            audioSource.PlayOneShot(fall_se); //落下音を再生
             StartCoroutine(IntervalCoroutine()); //キャラクター生成の間隔を制御
         }
         else if (Input.GetMouseButton(0) && isGene && !isButtonHover)
@@ -91,7 +98,10 @@ public class GameManager : MonoBehaviour
     public void RotateCharacter()
     {
         if (isGene)
+        {
             geneChara.transform.Rotate(0, 0, -30);//30度ずつ回転
+            audioSource.PlayOneShot(rotate_se); //回転音を再生
+        }
     }
 
     public void IsButtonChange(bool isX)
@@ -104,5 +114,5 @@ public class GameManager : MonoBehaviour
         score++; //スコアを加算
         scoreText.text = score.ToString(); //スコアテキストを更新
     }
-    
+
 }
