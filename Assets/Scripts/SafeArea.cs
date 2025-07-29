@@ -1,4 +1,5 @@
 using UnityEngine;
+using unityroom.Api;
 
 public class SafeArea : MonoBehaviour
 {
@@ -21,5 +22,6 @@ public class SafeArea : MonoBehaviour
         // ゲームオーバー処理
         resultPanel.SetActive(true); // 結果パネルを表示
         GameManager.isGameOver = true; // ゲームオーバー状態を更新
+        UnityroomApiClient.Instance.SendScore(1, GameManager.ReturnScore(), ScoreboardWriteMode.HighScoreDesc);
     }
 }

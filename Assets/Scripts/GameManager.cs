@@ -11,13 +11,13 @@ public class GameManager : MonoBehaviour
     bool isInterval = false; //キャラクター生成の間隔を制御
     bool isButtonHover = false; //ボタンがホバーされているかどうか
     public static bool isGameOver = false; //ゲームオーバー状態を管理
-    int score; //スコアを管理
+    static int score; //スコアを管理
     [SerializeField] TextMeshProUGUI scoreText; //スコア表示用のTextMeshProUGUI
     bool isGameStarted = false; //ゲーム開始状態を管理
     [SerializeField] AudioClip fall_se;
     [SerializeField] AudioClip rotate_se;
     AudioSource audioSource;
-    
+
     void Start()
     {
         //ゲーム開始時の初期化
@@ -113,6 +113,11 @@ public class GameManager : MonoBehaviour
     {
         score++; //スコアを加算
         scoreText.text = score.ToString(); //スコアテキストを更新
+    }
+
+    public static int ReturnScore()
+    {
+        return score; //現在のスコアを返す
     }
 
 }
