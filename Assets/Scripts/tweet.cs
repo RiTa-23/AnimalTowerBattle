@@ -11,6 +11,6 @@ public class tweet : MonoBehaviour
     public void TweetResult()
     {
         int score = GameManager.ReturnScore();
-        naichilab.UnityRoomTweet.Tweet ("RitanekoTowerDoNotBattle", score + "体積みました", "リタ猫タワーバトらない");
+        naichilab.UnityRoomTweet.Tweet ("RitanekoTowerDoNotBattle", "リタ猫タワーバトらないで【"+score + "体】積みました", "リタ猫タワーバトらない");
     }
 }
