@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
     GameObject geneChara; //生成されたキャラクター単体
     bool isInterval = false; //キャラクター生成の間隔を制御
     bool isButtonHover = false; //ボタンがホバーされているかどうか
+    bool isButtonReleasedOnButton = false; //ボタンから指を離した直後
     public static bool isGameOver = false; //ゲームオーバー状態を管理
     static int score; //スコアを管理
     [SerializeField] TextMeshProUGUI scoreText; //スコア表示用のTextMeshProUGUI
@@ -52,6 +53,11 @@ public class GameManager : MonoBehaviour
         //マウスの左ボタンが離されたとき、かつキャラクターが生成されている場合
         else if (Input.GetMouseButtonUp(0) && isGene && !isButtonHover)
         {
+            if(isButtonReleasedOnButton)
+            {
+                isButtonReleasedOnButton = false; //ボタンから指を離した直後のフラグをリセット
+                return; //ボタンから離した直後は何もしない
+            }
             //物理挙動を有効にする
             geneChara.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
             isGene = false; //キャラクター生成フラグをリセット
@@ -101,6 +107,7 @@ public class GameManager : MonoBehaviour
         {
             geneChara.transform.Rotate(0, 0, -30);//30度ずつ回転
             audioSource.PlayOneShot(rotate_se); //回転音を再生
+            isButtonReleasedOnButton = true; //ボタンから指を離した直後のフラグを立てる
         }
     }
 
